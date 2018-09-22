@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                console.log()
+
+                $(".content").show()
+                $(".welcome").hide()
+
+                $(".loginbutton").click(function(){
+                    $(".content").hide()
+                    $(".welcome").show()
+                    $(".mail").hide()
+                    $(".password").hide()
+                    $(".loginbutton").hide()
+                    $(".p1").hide()
+                    $(".p2").hide()
+                    $(".welcome").text("Välkommen "+$("input").val())
+                    
+                })
+
+
+
+            })
+        </script>
+    </head>
+    <body>
+
+        <div class="head">
+            <div class="title">
+                <h1>Head</h1>
+            </div>
+
+            <div class="login">
+                <p class="p1">E-mail:</p>
+                <input type="text" class="mail">
+
+                <p class="p2">Lösenord</p>
+                <input type="password" class="password">
+
+                <button class="loginbutton">Login</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <h1>Todo</h1>
+            <h3>Lorem ipsum.</h3>
+        </div>
+
+        <div class="welcome">
+
+        </div>
+    </body>
+</html>
