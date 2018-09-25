@@ -17,40 +17,49 @@
                     $(".loginbutton").hide()
                     $(".p1").hide()
                     $(".p2").hide()
-                    $(".welcome").text("Välkommen "+$("input").val())
-                    
+                    $(".welcome").text("Välkommen "+$("input").val()) 
                 })
-
-
-
             })
+
+            var username="Andreas"
+            var password="123"
+            login();
+
+            function login(){
+                if (username=="Andreas"&&password=="123"){
+                    document.getElementById("content").innerHTML="Välkommen";
+                    console.log("Rätt användarnamn och lösen.");
+                
+                } else if (password != "123") {
+                    document.getElementById("content").innerHTML="Fel Lösenord";
+                    console.log("Fel lösenord");
+
+                } else if (username!="Andreas") {
+                    document.getElementById("content").innerHTML="Fel Användarnamn";
+                    console.log("Fel användarnamn")
+                }
+            }
+            
         </script>
     </head>
     <body>
-
         <div class="head">
             <div class="title">
                 <h1>Head</h1>
             </div>
-
             <div class="login">
                 <p class="p1">E-mail:</p>
                 <input type="text" class="mail">
-
-                <p class="p2">Lösenord</p>
+                <p class="p2">Lösenord:</p>
                 <input type="password" class="password">
-
                 <button class="loginbutton">Login</button>
             </div>
         </div>
-
         <div class="content">
             <h1>Todo</h1>
             <h3>Lorem ipsum.</h3>
         </div>
-
         <div class="welcome">
-
         </div>
     </body>
 </html>
