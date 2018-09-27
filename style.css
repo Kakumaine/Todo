@@ -84,6 +84,14 @@ a {
     margin-top: 200px;
 }
 
+.lista {
+    background-color: rgb(109, 172, 255);
+    min-height: 600px;
+    margin:20px;
+    padding:20px;
+    margin-top: 200px;
+}
+
 .footer {
     background-color: bisque;
     text-align: center;
