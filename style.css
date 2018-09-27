@@ -21,12 +21,10 @@ a {
 }
 
 .title {
-    border:1px solid black;
     width:34.55%;
 }
 
 .login {
-    border: 1px solid black;
     width: 65.001%;
     text-align: right;
 }
@@ -40,7 +38,7 @@ a {
 .return {
     min-height: 600px;
     background-color: darkseagreen;
-    margin-top:300px;
+    margin-top:200px;
     border:1px solid black;
     padding:20px;
 }
@@ -48,7 +46,9 @@ a {
 #main {
     min-height: 600px;
     background-color: darkseagreen;
-    margin-top:300px;
+    margin:20px;
+    padding:20px;
+    margin-top:200px;
     border:1px solid black;
 }
 
@@ -61,11 +61,11 @@ a {
 }
 
 .kontakt {
-    background-color: crimson;
+    background-color: rgb(207, 205, 59);
     min-height: 600px;
     margin:20px;
     padding:20px;
-    margin-top: 300px;
+    margin-top: 200px;
 }
 
 .forget {
@@ -73,7 +73,7 @@ a {
     min-height: 600px;
     margin:20px;
     padding:20px;
-    margin-top: 300px;
+    margin-top: 200px;
 }
 
 .welcome {

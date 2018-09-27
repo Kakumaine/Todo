@@ -2,10 +2,22 @@ $(document).ready(function(){
     $(".return").hide();
     $(".forget").hide();
     $(".dateh3").text(Date);
+    $(".listbutton").hide();
+
+    var toDo=[
+        "Klipp håret",
+        "Skala bananer",
+        "Köp disk",
+        "Spika isär saker",
+        "Stryka gurkrock"
+    ];
+    
+    localStorage.myList="";
 
     if (sessionStorage.mittLogin!="inloggad"){
         $("#main").show();
         $(".kontakt").show();
+        $(".listbutton").hide();
         $(".content").hide();
         $(".welcome").hide();
         $(".logout").hide();
@@ -27,7 +39,9 @@ $(document).ready(function(){
                 $(".login").hide();
                 $(".forget").hide();
                 $(".logout").show();
-            
+                $(".listbutton").show();
+                $(".kontakt").hide();
+
             } else if ($(".usernameinput").val()!="test", $(".passwordinput").val()!="password"){
                 $(".forget").show();
                 $("#main").hide();
@@ -43,7 +57,8 @@ $(document).ready(function(){
         $(".content").show();
         $(".welcome").hide();
         $(".login").hide();
-        
+        $(".listbutton").show();
+
         $(".logoutbutton").click(function(){
             $(".return").show();
             $("#main").hide();
