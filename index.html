@@ -1,54 +1,18 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                console.log()
-
-                $(".content").show()
-                $(".welcome").hide()
-
-                $(".loginbutton").click(function(){
-                    $(".content").hide()
-                    $(".welcome").show()
-                    $(".mail").hide()
-                    $(".password").hide()
-                    $(".loginbutton").hide()
-                    $(".p1").hide()
-                    $(".p2").hide()
-                    $(".welcome").text("Välkommen "+$("input").val()) 
-                })
-            })
-
-            var username="Andreas"
-            var password="123"
-            login();
-
-            function login(){
-                if (username=="Andreas"&&password=="123"){
-                    document.getElementById("content").innerHTML="Välkommen";
-                    console.log("Rätt användarnamn och lösen.");
-                
-                } else if (password != "123") {
-                    document.getElementById("content").innerHTML="Fel Lösenord";
-                    console.log("Fel lösenord");
-
-                } else if (username!="Andreas") {
-                    document.getElementById("content").innerHTML="Fel Användarnamn";
-                    console.log("Fel användarnamn")
-                }
-            }
-            
-        </script>
+        <script src="script.js"></script>
     </head>
     <body>
         <div class="head">
             <div class="title">
-                <h1>Head</h1>
+                <a href="index.html"><h1>TODO</h1></a>
+                <a href="kontakt.html"><h3>Kontakt</h3></a>
             </div>
             <div class="login">
-                <p class="p1">E-mail:</p>
+                <p class="p1">Användarnamn:</p>
                 <input type="text" class="mail">
                 <p class="p2">Lösenord:</p>
                 <input type="password" class="password">
