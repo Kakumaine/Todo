@@ -1,6 +1,8 @@
 $(document).ready(function(){
     $(".return").hide();
     $(".forget").hide();
+    $(".dateh3").text(Date);
+
     if (sessionStorage.mittLogin!="inloggad"){
         $("#main").show();
         $(".kontakt").show();
@@ -9,11 +11,13 @@ $(document).ready(function(){
         $(".logout").hide();
         sessionStorage.mittLogin="utloggad";
         console.log(sessionStorage.mittLogin);
+
         $(".loginbutton").click(function(){
             $(".usernameinput").val();
             $(".passwordinput").val();
             $(".usernameinput").empty();
             $(".passwordinput").empty();
+            
             if ($(".usernameinput").val()=="test", $(".passwordinput").val()=="password"){
                 sessionStorage.mittLogin="inloggad";
                 $(".welcome").text("Välkommen "+$("input").val());
@@ -21,6 +25,9 @@ $(document).ready(function(){
                 $("#main").hide();
                 $(".content").hide();
                 $(".login").hide();
+                $(".forget").hide();
+                $(".logout").show();
+            
             } else if ($(".usernameinput").val()!="test", $(".passwordinput").val()!="password"){
                 $(".forget").show();
                 $("#main").hide();
@@ -36,6 +43,7 @@ $(document).ready(function(){
         $(".content").show();
         $(".welcome").hide();
         $(".login").hide();
+        
         $(".logoutbutton").click(function(){
             $(".return").show();
             $("#main").hide();
