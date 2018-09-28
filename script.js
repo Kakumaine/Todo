@@ -11,8 +11,12 @@ $(document).ready(function(){
         "Spika isär saker",
         "Stryka gurkrock"
     ];
-    
-    localStorage.myList="";
+    $(".listbox").text(toDo);
+
+    $(".addbutton").click(function(){
+        $(toDo).push($(".addinput").val())
+        console.log("click")
+    });
 
     if (sessionStorage.mittLogin!="inloggad"){
         $("#main").show();
@@ -27,8 +31,6 @@ $(document).ready(function(){
         $(".loginbutton").click(function(){
             $(".usernameinput").val();
             $(".passwordinput").val();
-            $(".usernameinput").empty();
-            $(".passwordinput").empty();
             
             if ($(".usernameinput").val()=="test", $(".passwordinput").val()=="password"){
                 sessionStorage.mittLogin="inloggad";
