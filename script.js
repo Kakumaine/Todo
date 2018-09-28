@@ -11,12 +11,7 @@ $(document).ready(function(){
         "Spika isär saker",
         "Stryka gurkrock"
     ];
-    $(".listbox").text(toDo);
-
-    $(".addbutton").click(function(){
-        $(toDo).push($(".addinput").val())
-        console.log("click")
-    });
+    console.log(toDo)
 
     if (sessionStorage.mittLogin!="inloggad"){
         $("#main").show();
@@ -34,6 +29,7 @@ $(document).ready(function(){
             
             if ($(".usernameinput").val()=="test", $(".passwordinput").val()=="password"){
                 sessionStorage.mittLogin="inloggad";
+                localStorage.minToDo="minLista";
                 $(".welcome").text("Välkommen "+$("input").val());
                 $(".welcome").show();
                 $("#main").hide();
@@ -55,12 +51,22 @@ $(document).ready(function(){
         });
     } else if (sessionStorage.mittLogin=="inloggad") {
         console.log(sessionStorage.mittLogin);
+        console.log(localStorage.minToDo);
         $("#main").hide();
         $(".content").show();
         $(".welcome").hide();
         $(".login").hide();
         $(".listbutton").show();
 
+        $.each(toDo, function(i, val){
+            $(".ulbox").append("<li>"+val+"<input type='checkbox'></li>")
+        });
+
+        $(".addbutton").click(function(){
+            $(toDo).push($(".addinput").val());
+            console.log()
+        });
+        
         $(".logoutbutton").click(function(){
             $(".return").show();
             $("#main").hide();
