@@ -11,8 +11,7 @@ $(document).ready(function(){
         "Spika isär saker",
         "Stryka gurkrock"
     ];
-    console.log(toDo)
-
+    
     if (sessionStorage.mittLogin!="inloggad"){
         $("#main").show();
         $(".kontakt").show();
@@ -59,12 +58,23 @@ $(document).ready(function(){
         $(".listbutton").show();
 
         $.each(toDo, function(i, val){
-            $(".ulbox").append("<li>"+val+"<input type='checkbox'></li>")
+            $(".ulbox").append("<li>"+val+"<i class='fas fa-check'></i></li>")
         });
 
-        $(".addbutton").click(function(){
-            $(toDo).push($(".addinput").val());
-            console.log()
+        $(function(){
+            $('i').hover(function(){//inte klar
+                $('i').toggleClass("fas fa-check", "fas fa-check-square");//inte klar
+                console.log("hover");//inte klar
+            })
+        });
+
+        $(".addbutton").click(function(){//inte klar
+            $(toDo).splice(5,0,);//inte klar
+            console.log("add");//inte klar
+        });
+
+        $(".checkbox").click(function(i){ //inte klar
+            $(toDo).splice(i,1);//inte klar
         });
         
         $(".logoutbutton").click(function(){
