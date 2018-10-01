@@ -11,7 +11,9 @@ $(document).ready(function(){
         "Spika isär saker",
         "Stryka gurkrock"
     ];
-    
+    var jsonString=JSON.stringify(toDo);
+    localStorage.minToDo=jsonString;
+
     if (sessionStorage.mittLogin!="inloggad"){
         $("#main").show();
         $(".kontakt").show();
@@ -49,7 +51,6 @@ $(document).ready(function(){
             };
         });
     } else if (sessionStorage.mittLogin=="inloggad") {
-        console.log(sessionStorage.mittLogin);
         console.log(localStorage.minToDo);
         $("#main").hide();
         $(".content").show();
@@ -62,19 +63,21 @@ $(document).ready(function(){
         });
 
         $(function(){
-            $('i').hover(function(){//inte klar
-                $('i').toggleClass("fas fa-check", "fas fa-check-square");//inte klar
-                console.log("hover");//inte klar
+            $("i").hover(function(){//inte klar, hover över checkbox
+                $("i").addClass("fas fa-check-square");}, function(){
+                    $("i").removeClass("fas fa-check-square");
+                    $("i").addClass("fas");
             })
         });
 
-        $(".addbutton").click(function(){//inte klar
-            $(toDo).splice(5,0,);//inte klar
-            console.log("add");//inte klar
+        $(".addbutton").click(function(){//inte klar, lägg till i listan
+            $(toDo).add($(".addinput").val());//inte klar
+            console.log("add");
         });
 
-        $(".checkbox").click(function(i){ //inte klar
-            $(toDo).splice(i,1);//inte klar
+        $("i").click(function(vem){ //inte klar, ta bort ur listan
+            $(toDo).splice(vem,1);//inte klar
+            console.log("click")
         });
         
         $(".logoutbutton").click(function(){
