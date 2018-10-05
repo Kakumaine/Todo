@@ -64,19 +64,21 @@ $(document).ready(function(){
 
         $(function(){
             $("i").hover(function(){//inte klar, hover över checkbox
-                $("i").addClass("fas fa-check-square");}, function(){
+                $("i").addClass("fas fa-check-square");
+                    }, function(){
                     $("i").removeClass("fas fa-check-square");
                     $("i").addClass("fas");
             })
         });
 
+        var add=$(".addinput").val();
         $(".addbutton").click(function(){//inte klar, lägg till i listan
-            $(toDo).add($(".addinput").val());//inte klar
+            $(toDo).add($(add));
             console.log("add");
         });
 
         $("i").click(function(vem){ //inte klar, ta bort ur listan
-            $(toDo).splice(vem,1);//inte klar
+            $(toDo).splice(vem,1);
             console.log("click")
         });
         
