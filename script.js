@@ -11,8 +11,6 @@ $(document).ready(function(){
         "Spika isär saker",
         "Stryka gurkrock"
     ];
-    var jsonString=JSON.stringify(toDo);
-    localStorage.minToDo=jsonString;
 
     if (sessionStorage.mittLogin!="inloggad"){
         $("#main").show();
@@ -22,7 +20,6 @@ $(document).ready(function(){
         $(".welcome").hide();
         $(".logout").hide();
         sessionStorage.mittLogin="utloggad";
-        console.log(sessionStorage.mittLogin);
 
         $(".loginbutton").click(function(){
             $(".usernameinput").val();
